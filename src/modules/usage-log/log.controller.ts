@@ -4,11 +4,12 @@ import { prisma } from "../../lib/prisma";
 
 
 const createUsageLog:RequestHandler=async(req,res)=>{
+    console.log(req.user)
    try {
      const payload=req.body
      console.log(payload);
     const log=await prisma.usageLog.create({
-        data:payload
+        data:{...payload,userId:req.user.id}
     })
     res.send({
         message:"log added",
@@ -44,7 +45,25 @@ const getUsageLog:RequestHandler=async(req,res)=>{
      
 }
 
+const updateUsageLog:RequestHandler=async(req,res)=>{
+    const id=req.params.id as string;
+
+    try {
+        const data=await prisma.usageLog.update({
+            where:{
+                id
+            },
+            data:{
+                endTime:new Date()
+            }
+        })
+    } catch (error) {
+        
+    }
+}
+
 export const logControler={
     createUsageLog,
-    getUsageLog
+    getUsageLog,
+    updateUsageLog
 }

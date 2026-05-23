@@ -9,4 +9,4 @@ routes.use("/user",userRouter)
 routes.use("/equipment",equipmentRouter)
 routes.use("/usagelog",logRouter)
  
-export default routes;
+export default routes; 
