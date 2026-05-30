@@ -287,7 +287,7 @@ export type UsageLogCreateInput = {
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutUsageLogsInput
+  user: Prisma.UserCreateNestedOneWithoutUsageLogInput
   equipment: Prisma.EquipmentCreateNestedOneWithoutUsageLogsInput
 }
 
@@ -311,7 +311,7 @@ export type UsageLogUpdateInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutUsageLogsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutUsageLogNestedInput
   equipment?: Prisma.EquipmentUpdateOneRequiredWithoutUsageLogsNestedInput
 }
 
@@ -407,48 +407,6 @@ export type UsageLogMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type UsageLogCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
-  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-}
-
-export type UsageLogUncheckedCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
-  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-}
-
-export type UsageLogUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
-  set?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  disconnect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  delete?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  update?: Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.UsageLogUpdateManyWithWhereWithoutUserInput | Prisma.UsageLogUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
-}
-
-export type UsageLogUncheckedUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
-  set?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  disconnect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  delete?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
-  update?: Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.UsageLogUpdateManyWithWhereWithoutUserInput | Prisma.UsageLogUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
-}
-
 export type UsageLogCreateNestedManyWithoutEquipmentInput = {
   create?: Prisma.XOR<Prisma.UsageLogCreateWithoutEquipmentInput, Prisma.UsageLogUncheckedCreateWithoutEquipmentInput> | Prisma.UsageLogCreateWithoutEquipmentInput[] | Prisma.UsageLogUncheckedCreateWithoutEquipmentInput[]
   connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutEquipmentInput | Prisma.UsageLogCreateOrConnectWithoutEquipmentInput[]
@@ -499,6 +457,111 @@ export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
 }
 
+export type UsageLogCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
+  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+}
+
+export type UsageLogUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
+  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+}
+
+export type UsageLogUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
+  set?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  disconnect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  delete?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  update?: Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.UsageLogUpdateManyWithWhereWithoutUserInput | Prisma.UsageLogUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
+}
+
+export type UsageLogUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.UsageLogCreateWithoutUserInput, Prisma.UsageLogUncheckedCreateWithoutUserInput> | Prisma.UsageLogCreateWithoutUserInput[] | Prisma.UsageLogUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.UsageLogCreateOrConnectWithoutUserInput | Prisma.UsageLogCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.UsageLogCreateManyUserInputEnvelope
+  set?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  disconnect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  delete?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  connect?: Prisma.UsageLogWhereUniqueInput | Prisma.UsageLogWhereUniqueInput[]
+  update?: Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput | Prisma.UsageLogUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.UsageLogUpdateManyWithWhereWithoutUserInput | Prisma.UsageLogUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
+}
+
+export type UsageLogCreateWithoutEquipmentInput = {
+  id?: string
+  stateTime: Date | string
+  endTime?: Date | string | null
+  purpose: string
+  notes?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutUsageLogInput
+}
+
+export type UsageLogUncheckedCreateWithoutEquipmentInput = {
+  id?: string
+  userId: string
+  stateTime: Date | string
+  endTime?: Date | string | null
+  purpose: string
+  notes?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type UsageLogCreateOrConnectWithoutEquipmentInput = {
+  where: Prisma.UsageLogWhereUniqueInput
+  create: Prisma.XOR<Prisma.UsageLogCreateWithoutEquipmentInput, Prisma.UsageLogUncheckedCreateWithoutEquipmentInput>
+}
+
+export type UsageLogCreateManyEquipmentInputEnvelope = {
+  data: Prisma.UsageLogCreateManyEquipmentInput | Prisma.UsageLogCreateManyEquipmentInput[]
+  skipDuplicates?: boolean
+}
+
+export type UsageLogUpsertWithWhereUniqueWithoutEquipmentInput = {
+  where: Prisma.UsageLogWhereUniqueInput
+  update: Prisma.XOR<Prisma.UsageLogUpdateWithoutEquipmentInput, Prisma.UsageLogUncheckedUpdateWithoutEquipmentInput>
+  create: Prisma.XOR<Prisma.UsageLogCreateWithoutEquipmentInput, Prisma.UsageLogUncheckedCreateWithoutEquipmentInput>
+}
+
+export type UsageLogUpdateWithWhereUniqueWithoutEquipmentInput = {
+  where: Prisma.UsageLogWhereUniqueInput
+  data: Prisma.XOR<Prisma.UsageLogUpdateWithoutEquipmentInput, Prisma.UsageLogUncheckedUpdateWithoutEquipmentInput>
+}
+
+export type UsageLogUpdateManyWithWhereWithoutEquipmentInput = {
+  where: Prisma.UsageLogScalarWhereInput
+  data: Prisma.XOR<Prisma.UsageLogUpdateManyMutationInput, Prisma.UsageLogUncheckedUpdateManyWithoutEquipmentInput>
+}
+
+export type UsageLogScalarWhereInput = {
+  AND?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
+  OR?: Prisma.UsageLogScalarWhereInput[]
+  NOT?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
+  id?: Prisma.StringFilter<"UsageLog"> | string
+  userId?: Prisma.StringFilter<"UsageLog"> | string
+  equipmentId?: Prisma.StringFilter<"UsageLog"> | string
+  stateTime?: Prisma.DateTimeFilter<"UsageLog"> | Date | string
+  endTime?: Prisma.DateTimeNullableFilter<"UsageLog"> | Date | string | null
+  purpose?: Prisma.StringFilter<"UsageLog"> | string
+  notes?: Prisma.StringNullableFilter<"UsageLog"> | string | null
+  createdAt?: Prisma.DateTimeFilter<"UsageLog"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"UsageLog"> | Date | string
+}
+
 export type UsageLogCreateWithoutUserInput = {
   id?: string
   stateTime: Date | string
@@ -547,33 +610,7 @@ export type UsageLogUpdateManyWithWhereWithoutUserInput = {
   data: Prisma.XOR<Prisma.UsageLogUpdateManyMutationInput, Prisma.UsageLogUncheckedUpdateManyWithoutUserInput>
 }
 
-export type UsageLogScalarWhereInput = {
-  AND?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
-  OR?: Prisma.UsageLogScalarWhereInput[]
-  NOT?: Prisma.UsageLogScalarWhereInput | Prisma.UsageLogScalarWhereInput[]
-  id?: Prisma.StringFilter<"UsageLog"> | string
-  userId?: Prisma.StringFilter<"UsageLog"> | string
-  equipmentId?: Prisma.StringFilter<"UsageLog"> | string
-  stateTime?: Prisma.DateTimeFilter<"UsageLog"> | Date | string
-  endTime?: Prisma.DateTimeNullableFilter<"UsageLog"> | Date | string | null
-  purpose?: Prisma.StringFilter<"UsageLog"> | string
-  notes?: Prisma.StringNullableFilter<"UsageLog"> | string | null
-  createdAt?: Prisma.DateTimeFilter<"UsageLog"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"UsageLog"> | Date | string
-}
-
-export type UsageLogCreateWithoutEquipmentInput = {
-  id?: string
-  stateTime: Date | string
-  endTime?: Date | string | null
-  purpose: string
-  notes?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutUsageLogsInput
-}
-
-export type UsageLogUncheckedCreateWithoutEquipmentInput = {
+export type UsageLogCreateManyEquipmentInput = {
   id?: string
   userId: string
   stateTime: Date | string
@@ -584,30 +621,37 @@ export type UsageLogUncheckedCreateWithoutEquipmentInput = {
   updatedAt?: Date | string
 }
 
-export type UsageLogCreateOrConnectWithoutEquipmentInput = {
-  where: Prisma.UsageLogWhereUniqueInput
-  create: Prisma.XOR<Prisma.UsageLogCreateWithoutEquipmentInput, Prisma.UsageLogUncheckedCreateWithoutEquipmentInput>
+export type UsageLogUpdateWithoutEquipmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  stateTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutUsageLogNestedInput
 }
 
-export type UsageLogCreateManyEquipmentInputEnvelope = {
-  data: Prisma.UsageLogCreateManyEquipmentInput | Prisma.UsageLogCreateManyEquipmentInput[]
-  skipDuplicates?: boolean
+export type UsageLogUncheckedUpdateWithoutEquipmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  stateTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type UsageLogUpsertWithWhereUniqueWithoutEquipmentInput = {
-  where: Prisma.UsageLogWhereUniqueInput
-  update: Prisma.XOR<Prisma.UsageLogUpdateWithoutEquipmentInput, Prisma.UsageLogUncheckedUpdateWithoutEquipmentInput>
-  create: Prisma.XOR<Prisma.UsageLogCreateWithoutEquipmentInput, Prisma.UsageLogUncheckedCreateWithoutEquipmentInput>
-}
-
-export type UsageLogUpdateWithWhereUniqueWithoutEquipmentInput = {
-  where: Prisma.UsageLogWhereUniqueInput
-  data: Prisma.XOR<Prisma.UsageLogUpdateWithoutEquipmentInput, Prisma.UsageLogUncheckedUpdateWithoutEquipmentInput>
-}
-
-export type UsageLogUpdateManyWithWhereWithoutEquipmentInput = {
-  where: Prisma.UsageLogScalarWhereInput
-  data: Prisma.XOR<Prisma.UsageLogUpdateManyMutationInput, Prisma.UsageLogUncheckedUpdateManyWithoutEquipmentInput>
+export type UsageLogUncheckedUpdateManyWithoutEquipmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  stateTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  purpose?: Prisma.StringFieldUpdateOperationsInput | string
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UsageLogCreateManyUserInput = {
@@ -646,50 +690,6 @@ export type UsageLogUncheckedUpdateWithoutUserInput = {
 export type UsageLogUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   equipmentId?: Prisma.StringFieldUpdateOperationsInput | string
-  stateTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  purpose?: Prisma.StringFieldUpdateOperationsInput | string
-  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type UsageLogCreateManyEquipmentInput = {
-  id?: string
-  userId: string
-  stateTime: Date | string
-  endTime?: Date | string | null
-  purpose: string
-  notes?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type UsageLogUpdateWithoutEquipmentInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  stateTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  purpose?: Prisma.StringFieldUpdateOperationsInput | string
-  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutUsageLogsNestedInput
-}
-
-export type UsageLogUncheckedUpdateWithoutEquipmentInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
-  stateTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  purpose?: Prisma.StringFieldUpdateOperationsInput | string
-  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type UsageLogUncheckedUpdateManyWithoutEquipmentInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
   stateTime?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   purpose?: Prisma.StringFieldUpdateOperationsInput | string
