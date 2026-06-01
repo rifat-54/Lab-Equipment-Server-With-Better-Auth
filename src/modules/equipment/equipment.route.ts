@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { equipmentController } from "./equipment.controller";
+import auth from "../../middleware/auth";
 
 const equipmentRouter=Router()
 
-equipmentRouter.post("/",equipmentController.createEquipment)
+equipmentRouter.post("/",auth("equipment","create"),equipmentController.createEquipment)
 equipmentRouter.get("/",equipmentController.getEquipments)
 
 export default equipmentRouter;
